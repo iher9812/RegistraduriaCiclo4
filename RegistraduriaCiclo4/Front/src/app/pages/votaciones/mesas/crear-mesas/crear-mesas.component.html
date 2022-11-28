@@ -1,0 +1,48 @@
+<app-head-bar></app-head-bar>
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>UNAL y MISIÓN TIC 2022</mat-card-title>
+    <mat-card-subtitle *ngIf="modoCreacion">Crear mesa</mat-card-subtitle>
+    <mat-card-subtitle *ngIf="!modoCreacion">Editar mesa</mat-card-subtitle>
+
+    <p>
+      <mat-form-field appearance="outline"*ngIf="!modoCreacion">
+        <mat-label>Número de mesa</mat-label>
+        <input matInput
+        placeholder="Número de mesa"
+        type="number"  [(ngModel)]="laMesa.numero"  disabled>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" *ngIf="modoCreacion" >
+        <mat-label>Número de mesa</mat-label>
+      <input matInput placeholder="Número de mesa"
+      type="text" [(ngModel)]="laMesa.numero">
+      <mat-icon matSuffix>number</mat-icon>
+      <mat-hint>Requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Cantidad de inscritos</mat-label>
+        <input matInput placeholder="Cantidad inscritos"
+        type="text"  [(ngModel)]="laMesa.cantidad_inscritos" required>
+        <mat-icon matSuffix>number</mat-icon>
+        <mat-hint>Requerido</mat-hint>
+      </mat-form-field>
+    </p>
+
+          <button mat-raised-button color="primary"
+          *ngIf="modoCreacion"
+          (click)="crearMesa()">Agregar</button>
+
+          <button mat-raised-button color="primary"
+          *ngIf="!modoCreacion"
+          (click)="editarMesa()">Editar</button>
+
+          <button mat-raised-button color="warn"
+          (click)="btnBack()"
+          >Cancelar</button>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,35 @@
+<mat-grid-list cols="4" rowHeight="4:1">
+  <mat-grid-tile *ngFor="let head of tableHead">
+    {{head}}</mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-fab color="primary"
+    (click)="btnBack()">
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-fab color="primary"
+    (click)="btnMake()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="4" rowHeight="4:1" *ngFor="let mesa of mesas">
+  <mat-grid-tile>{{mesa.numero}}</mat-grid-tile>
+  <mat-grid-tile>{{mesa.cantidad_inscritos}}</mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-fab color="accent"
+    (click)="btnEdit(mesa._id)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-fab color="warn"
+    (click)="btnDelete(mesa._id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>

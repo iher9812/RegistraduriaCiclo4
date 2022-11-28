@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>
+      Bienvenido
+    </mat-card-title>
+    <mat-card-subtitle>
+      Vista de votaciones
+    </mat-card-subtitle>
+
+    <mat-grid-list cols="4" rowHeight="2:1">
+      <mat-grid-tile>
+        <button mat-raised-button color="accent"
+        (click)="btnMesas()">Mesas</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn"
+        (click)="btnPartidos()">Partidos</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="accent">Candidatos</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn">Resultados</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card-content>
+</mat-card>

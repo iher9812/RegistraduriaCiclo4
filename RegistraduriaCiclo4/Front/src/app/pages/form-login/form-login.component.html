@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Página de autenticación</mat-card-title>
+    <mat-card-subtitle>UNAL y MISIÓN TIC 2022</mat-card-subtitle>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Alias</mat-label>
+        <input matInput placeholder="Ingrese su alias"
+        type="text" required [(ngModel)]="seudonimo">
+        <mat-icon matSuffix>nickname</mat-icon>
+        <mat-hint>Requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input matInput placeholder="Ingrese su correo"
+        type="email" required [(ngModel)]="correo">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint>Requerido</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="Ingrese su contraseña"
+        type="password" required [(ngModel)]="contrasena">
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-hint>Hint</mat-hint>
+      </mat-form-field>
+    </p>
+
+          <button mat-raised-button color="primary"
+          (click)="btnIngresar()">Ingresar</button>
+
+          <button mat-raised-button color="warn"
+          (click)="btnRegistrar()">Registrar</button>
+
+
+  </mat-card-content>
+</mat-card>
